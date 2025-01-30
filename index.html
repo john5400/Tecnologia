@@ -3,14 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicios Digitales - [john quintero]</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Servicios Digitales - John Quintero</title>
+  <style>
+    /* Estilos para el fondo dinámico */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: #fff;
+      text-align: center;
+      animation: cambioColor 10s infinite; /* Animación de cambio de color */
+    }
+
+    @keyframes cambioColor {
+      0% { background-color: #6a11cb; } /* Morado */
+      25% { background-color: #2575fc; } /* Azul */
+      50% { background-color: #ff6f61; } /* Coral */
+      75% { background-color: #2ecc71; } /* Verde */
+      100% { background-color: #6a11cb; } /* Morado */
+    }
+
+    /* Estilos generales */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    header {
+      padding: 100px 0;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #fff;
+      color: #333;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .btn:hover {
+      background: #ddd;
+    }
+
+    /* Estilos para las secciones */
+    #servicios, #portafolio, #contacto {
+      padding: 50px 0;
+      background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
+    }
+
+    .servicios-grid, .portafolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .servicio, .proyecto {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .proyecto img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    footer {
+      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.7);
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <img src="logo.jpeg" alt="Proyecto 1" width="280">
-      <
+      <img src="logo.jpeg" alt="Logo" width="280">
       <h1>Transformamos tu negocio con soluciones digitales</h1>
       <p>Digitalización, páginas web, bases de datos y marketing.</p>
       <a href="#contacto" class="btn">Contactar</a>
@@ -47,12 +129,11 @@
       <div class="portafolio-grid">
         <div class="proyecto">
           <img src="lapt.jpg" alt="Proyecto 1">
-          <p>mejores precios.</p>
+          <p>Mejores precios.</p>
         </div>
         <div class="proyecto">
-          <img src="calidad.jpg" alt="Proyecto 2"  width="10">
-         
-          <p>calidad de servicio.</p>
+          <img src="calidad.jpg" alt="Proyecto 2">
+          <p>Calidad de servicio.</p>
         </div>
       </div>
     </div>
@@ -61,28 +142,23 @@
   <section id="contacto">
     <div class="container">
       <h2>Contacto</h2>
-      <!-- modify this form HTML and place wherever you want your form -->
-<form
-action="https://formspree.io/f/xovjwawl"
-method="POST"
->
-<label>
-  Your email:
-  <input type="email" name="email">
-</label>
-<label>
-  Your message:
-  <textarea name="message"></textarea>
-</label>
-<!-- your other form fields go here -->
-<button type="submit">Send</button>
-</form>
+      <form action="https://formspree.io/f/xovjwawl" method="POST">
+        <label>
+          Tu correo:
+          <input type="email" name="email" required>
+        </label>
+        <label>
+          Tu mensaje:
+          <textarea name="message" required></textarea>
+        </label>
+        <button type="submit" class="btn">Enviar</button>
+      </form>
     </div>
   </section>
 
   <footer>
     <div class="container">
-      <p>&copy; 2025 [john quintero]. Todos los derechos reservados.</p>
+      <p>&copy; 2025 John Quintero. Todos los derechos reservados.</p>
     </div>
   </footer>
 </body>
