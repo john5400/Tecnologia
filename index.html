@@ -3,27 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicios Digitales - John Quintero</title>
+  <title>Servicios Digitales - John Quintero | Digitalización, Páginas Web y Marketing</title>
+  <meta name="description" content="Ofrecemos soluciones digitales como digitalización, páginas web, bases de datos y marketing. Contáctanos para transformar tu negocio.">
+  <meta name="keywords" content="servicios digitales, páginas web, marketing digital, digitalización, bases de datos">
+  <meta name="author" content="John Quintero">
+  <!-- Open Graph para redes sociales -->
+  <meta property="og:title" content="Servicios Digitales - John Quintero">
+  <meta property="og:description" content="Ofrecemos soluciones digitales como digitalización, páginas web, bases de datos y marketing.">
+  <meta property="og:image" content="https://john5400.github.io/Tecnologia/logo.jpeg">
+  <meta property="og:url" content="https://john5400.github.io/Tecnologia/">
+  <!-- Estilos -->
   <style>
-    /* Estilos para el fondo dinámico */
+    /* Estilos generales */
     body {
       margin: 0;
       padding: 0;
       font-family: Arial, sans-serif;
       color: #fff;
       text-align: center;
-      animation: cambioColor 10s infinite; /* Animación de cambio de color */
+      background: linear-gradient(135deg, #6a11cb, #2575fc, #ff6f61, #2ecc71);
+      background-size: 400% 400%;
+      animation: cambioColor 10s infinite;
     }
 
     @keyframes cambioColor {
-      0% { background-color: #6a11cb; } /* Morado */
-      25% { background-color: #2575fc; } /* Azul */
-      50% { background-color: #ff6f61; } /* Coral */
-      75% { background-color: #2ecc71; } /* Verde */
-      100% { background-color: #6a11cb; } /* Morado */
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
-    /* Estilos generales */
     .container {
       width: 90%;
       max-width: 1200px;
@@ -32,12 +40,17 @@
     }
 
     header {
-      padding: 100px 0;
+      padding: 50px 0;
     }
 
     h1 {
       font-size: 2.5rem;
       margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
     }
 
     p {
@@ -62,7 +75,7 @@
     /* Estilos para las secciones */
     #servicios, #portafolio, #contacto {
       padding: 50px 0;
-      background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para mejorar la legibilidad */
+      background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
     }
 
     .servicios-grid, .portafolio-grid {
@@ -83,16 +96,88 @@
       border-radius: 10px;
     }
 
+    /* Estilos para el formulario de contacto */
+    form {
+      max-width: 500px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    textarea {
+      resize: vertical;
+      height: 150px;
+    }
+
+    button[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background: #fff;
+      color: #333;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background: #ddd;
+    }
+
+    /* Estilos para el footer */
     footer {
       padding: 20px 0;
       background: rgba(0, 0, 0, 0.7);
+    }
+
+    /* Media Queries para Responsive Design */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      .servicios-grid, .portafolio-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .btn {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      form {
+        padding: 0 10px;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
-      <img src="logo.jpeg" alt="Logo" width="280">
+      <img src="logo.jpeg" alt="Logo de John Quintero - Servicios Digitales" width="280">
       <h1>Transformamos tu negocio con soluciones digitales</h1>
       <p>Digitalización, páginas web, bases de datos y marketing.</p>
       <a href="#contacto" class="btn">Contactar</a>
@@ -128,11 +213,11 @@
       <h2>Portafolio</h2>
       <div class="portafolio-grid">
         <div class="proyecto">
-          <img src="lapt.jpg" alt="Proyecto 1">
+          <img src="lapt.jpg" alt="Laptop con servicios digitales - Mejores precios" width="400" height="300">
           <p>Mejores precios.</p>
         </div>
         <div class="proyecto">
-          <img src="calidad.jpg" alt="Proyecto 2">
+          <img src="calidad.jpg" alt="Calidad de servicio en soluciones digitales" width="400" height="300">
           <p>Calidad de servicio.</p>
         </div>
       </div>
@@ -143,14 +228,10 @@
     <div class="container">
       <h2>Contacto</h2>
       <form action="https://formspree.io/f/xovjwawl" method="POST">
-        <label>
-          Tu correo:
-          <input type="email" name="email" required>
-        </label>
-        <label>
-          Tu mensaje:
-          <textarea name="message" required></textarea>
-        </label>
+        <label for="email">Tu correo:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Tu mensaje:</label>
+        <textarea id="message" name="message" required></textarea>
         <button type="submit" class="btn">Enviar</button>
       </form>
     </div>
