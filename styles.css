@@ -31,24 +31,31 @@ body {
   margin: 0 auto;
 }
 
-/* Header */
+/* Header con imagen de fondo */
 header {
-  background: linear-gradient(120deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
-  background-size: 300% 300%;
-  color: white;
-  padding: 100px 0;
-  text-align: center;
-  animation: headerAnimado 8s infinite alternate;
-}
-
-.header-content {
+  background-image: url('pexels-pixabay.jpg'); /* Ruta de la imagen de fondo */
+  background-size: cover; /* Cubre toda la pantalla */
+  background-position: center; /* Centra la imagen */
+  height: 60vh; /* Altura de toda la pantalla */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 20px;
+  justify-content: space-between; /* Espacio entre navbar y contenido */
+  color: white;
+  text-align: center;
 }
 
-/* Logo con clip-path */
+/* Navbar */
+.navbar {
+  background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+  padding: 20px 0;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .logo-container {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
   width: 180px;
@@ -56,7 +63,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: white; /* Para destacar el recorte */
+  background: rgb(180, 4, 4); /* Para destacar el recorte */
   padding: 10px;
 }
 
@@ -72,14 +79,23 @@ header {
   filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.4));
 }
 
-.header-text h1 {
-  font-size: 2.5rem;
-  margin-bottom: 10px;
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 20px; /* Espacio entre enlaces */
 }
 
-.header-text p {
-  font-size: 1.2rem;
-  margin-bottom: 20px;
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #1db954; /* Color verde de Spotify al hacer hover */
 }
 
 /* Botón */
@@ -88,7 +104,9 @@ header {
   padding: 10px 20px;
   background: linear-gradient(90deg, var(--color-accent), #ff4b2b);
   color: white;
-  border-radius: 5px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-size: 1rem;
   transition: background 0.3s ease;
   animation: btnAnimado 5s infinite alternate;
 }
@@ -100,6 +118,22 @@ header {
 
 .btn:hover {
   background: var(--color-primary);
+}
+
+/* Hero Content */
+.hero-content {
+  text-align: center;
+  margin-bottom: 100px; /* Espacio inferior */
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
 }
 
 /* Secciones */
@@ -149,4 +183,24 @@ footer {
 @keyframes footerAnimado {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    margin-top: 10px;
+  }
+
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
 }
