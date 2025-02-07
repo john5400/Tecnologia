@@ -1,125 +1,152 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicios Digitales - John Quintero | Digitalización, Páginas Web y Marketing</title>
-  <meta name="description" content="Ofrecemos soluciones digitales como digitalización, páginas web, bases de datos y marketing. Contáctanos para transformar tu negocio.">
-  <meta name="keywords" content="servicios digitales, páginas web, marketing digital, digitalización, bases de datos">
-  <meta name="author" content="John Quintero">
-  <!-- Open Graph para redes sociales -->
-  <meta property="og:title" content="Servicios Digitales - John Quintero">
-  <meta property="og:description" content="Ofrecemos soluciones digitales como digitalización, páginas web, bases de datos y marketing.">
-  <meta property="og:image" content="https://john5400.github.io/Tecnologia/logo.jpeg">
-  <meta property="og:url" content="https://john5400.github.io/Tecnologia/">
-  <!-- FontAwesome para iconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <!-- Estilos -->
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <header>
-    <div class="container">
-      <img src="logo.jpeg" alt="Logo de John Quintero - Servicios Digitales" width="280">
-      <h1>Transformamos tu negocio con soluciones digitales</h1>
-      <p>Digitalización, páginas web, bases de datos y marketing.</p>
-      <p>Soluciones digitales personalizadas</p>
-      <a href="#contacto" class="btn">Contactar</a>
-    </div>
-  </header>
+/* Variables CSS */
+:root {
+  --color-primary: #3498db;
+  --color-secondary: #2c3e50;
+  --color-accent: #ff416c;
+  --color-background: #f9f9f9;
+  --color-text: #333;
+  --font-primary: 'Poppins', sans-serif;
+}
 
-  <section id="servicios">
-    <div class="container">
-      <h2>Nuestros Servicios</h2>
-      <div class="servicios-grid">
-        <div class="servicio">
-          <i class="fas fa-file-digital fa-3x"></i>
-          <h3>Digitalización</h3>
-          <p>Convierte tus archivos físicos en digitales de manera segura.</p>
-        </div>
-        <div class="servicio">
-          <i class="fas fa-laptop-code fa-3x"></i>
-          <h3>Páginas Web</h3>
-          <p>Diseños modernos y funcionales para tu negocio.</p>
-        </div>
-        <div class="servicio">
-          <i class="fas fa-database fa-3x"></i>
-          <h3>Bases de Datos</h3>
-          <p>Organiza y gestiona tu información de manera inteligente.</p>
-        </div>
-        <div class="servicio">
-          <i class="fas fa-chart-line fa-3x"></i>
-          <h3>Marketing Digital</h3>
-          <p>Llega a más clientes con estrategias efectivas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+/* Estilos generales */
+body {
+  font-family: var(--font-primary);
+  margin: 0;
+  padding: 0;
+  color: var(--color-text);
+  line-height: 1.6;
+  background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+  background-size: 400% 400%;
+  animation: fondoAnimado 10s infinite alternate;
+}
 
-  <section id="portafolio">
-    <div class="container">
-      <h2>Portafolio</h2>
-      <div class="portafolio-grid">
-        <div class="proyecto">
-          <img src="lapt.jpg" alt="Laptop con servicios digitales - Mejores precios" width="400" height="300">
-          <p>Mejores precios.</p>
-        </div>
-        <div class="proyecto">
-          <img src="calidad.jpg" alt="Calidad de servicio en soluciones digitales" width="400" height="300">
-          <p>Calidad de servicio.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+@keyframes fondoAnimado {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
 
-  <section id="contacto">
-    <div class="container">
-      <h2>Contacto</h2>
-      <form action="https://formspree.io/f/xovjwawl" method="POST">
-        <label for="email">Tu correo:</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Tu mensaje:</label>
-        <textarea id="message" name="message" required></textarea>
-        <button type="submit" class="btn">Enviar</button>
-      </form>
-    </div>
-  </section>
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 John Quintero. Todos los derechos reservados.</p>
-    </div>
-  </footer>
+/* Header */
+header {
+  background: linear-gradient(120deg, #ff7e5f, #feb47b, #86a8e7, #7f7fd5);
+  background-size: 300% 300%;
+  color: white;
+  padding: 100px 0;
+  text-align: center;
+  animation: headerAnimado 8s infinite alternate;
+}
 
-  <!-- Botón de "Volver arriba" -->
-  <button id="back-to-top" class="btn" onclick="scrollToTop()">↑</button>
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
 
-  <!-- Scripts -->
-  <script>
-    // Botón de "Volver arriba"
-    window.onscroll = function() {
-      const button = document.getElementById('back-to-top');
-      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        button.style.display = 'block';
-      } else {
-        button.style.display = 'none';
-      }
-    };
+/* Logo con clip-path */
+.logo-container {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white; /* Para destacar el recorte */
+  padding: 10px;
+}
 
-    function scrollToTop() {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
+.logo {
+  width: 150px;
+  height: auto;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
 
-    // Validación del formulario
-    document.querySelector('form').addEventListener('submit', function(event) {
-      const email = document.getElementById('email').value;
-      const message = document.getElementById('message').value;
+.logo:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.4));
+}
 
-      if (!email || !message) {
-        alert('Por favor, completa todos los campos.');
-        event.preventDefault();
-      }
-    });
-  </script>
-</body>
-</html>
+.header-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.header-text p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+/* Botón */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background: linear-gradient(90deg, var(--color-accent), #ff4b2b);
+  color: white;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+  animation: btnAnimado 5s infinite alternate;
+}
+
+@keyframes btnAnimado {
+  0% { background: linear-gradient(90deg, var(--color-accent), #ff4b2b); }
+  100% { background: linear-gradient(90deg, #ff4b2b, var(--color-accent)); }
+}
+
+.btn:hover {
+  background: var(--color-primary);
+}
+
+/* Secciones */
+.section {
+  padding: 50px 0;
+}
+
+#servicios {
+  background: gray;
+}
+
+.servicios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.servicio {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.portafolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.proyecto img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(120deg, var(--color-secondary), #34495e, var(--color-secondary));
+  background-size: 400% 400%;
+  color: #fff;
+  text-align: center;
+  padding: 20px 0;
+  animation: footerAnimado 6s infinite alternate;
+}
+
+@keyframes footerAnimado {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
