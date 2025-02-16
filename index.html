@@ -1,29 +1,340 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Servicios Digitales - John Quintero | Digitalización, Páginas Web y Marketing</title>
   <meta name="description" content="Ofrecemos soluciones digitales como digitalización, páginas web, bases de datos y marketing. Contáctanos para transformar tu negocio.">
-  <meta name="keywords" content="servicios digitales, páginas web, marketing digital, digitalización, bases de datos, John Quintero">
+  <meta name="keywords" content="servicios digitales, páginas web, marketing digital, digitalización, bases de datos">
   <meta name="author" content="John Quintero">
   <!-- Open Graph para redes sociales -->
   <meta property="og:title" content="Servicios Digitales - John Quintero">
   <meta property="og:description" content="Ofrecemos soluciones digitales como digitalización, páginas web, bases de datos y marketing.">
   <meta property="og:image" content="https://john5400.github.io/Tecnologia/logo.jpeg">
   <meta property="og:url" content="https://john5400.github.io/Tecnologia/">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="John Quintero - Servicios Digitales">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Servicios Digitales - John Quintero">
-  <meta name="twitter:description" content="Ofrecemos soluciones digitales como digitalización, páginas web, bases de datos y marketing.">
-  <meta name="twitter:image" content="https://john5400.github.io/Tecnologia/logo.jpeg">
   <!-- FontAwesome para iconos -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <!-- Estilos -->
   <style>
-    /* (Estilos anteriores se mantienen igual) */
+    /* Variables CSS */
+    :root {
+      --color-primary: #3498db;
+      --color-secondary: #2c3e50;
+      --color-accent: #ff416c;
+      --color-background: #f9f9f9;
+      --color-text: #333;
+      --font-primary: 'Poppins', sans-serif;
+    }
+
+    /* Estilos generales */
+    body {
+      font-family: var(--font-primary);
+      margin: 0;
+      padding: 0;
+      color: var(--color-text);
+      line-height: 1.6;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffdde1);
+      background-size: 400% 400%;
+      animation: fondoAnimado 10s infinite alternate;
+    }
+
+    @keyframes fondoAnimado {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    /* Header con imagen de fondo */
+    header {
+      background-image: url('pexels-pixabay.jpg'); /* Ruta de la imagen de fondo */
+      background-size: cover; /* Cubre toda la pantalla */
+      background-position: center; /* Centra la imagen */
+      height: 60vh; /* Altura de toda la pantalla */
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* Espacio entre navbar y contenido */
+      color: white;
+      text-align: center;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: rgba(0, 0, 0, 0.7); /* Fondo semi-transparente */
+      padding: 20px 0;
+    }
+
+    .navbar .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo-container {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      width: 180px;
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgb(180, 4, 4); /* Para destacar el recorte */
+      padding: 10px;
+    }
+
+    .logo {
+      width: 150px;
+      height: auto;
+      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+      filter: drop-shadow(0 6px 8px rgba(0, 0, 0, 0.4));
+    }
+
+    .nav-links {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 20px; /* Espacio entre enlaces */
+    }
+
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: #1db954; /* Color verde de Spotify al hacer hover */
+    }
+
+    /* Botón */
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(90deg, var(--color-accent), #ff4b2b);
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+      animation: btnAnimado 5s infinite alternate;
+    }
+
+    @keyframes btnAnimado {
+      0% { background: linear-gradient(90deg, var(--color-accent), #ff4b2b); }
+      100% { background: linear-gradient(90deg, #ff4b2b, var(--color-accent)); }
+    }
+
+    .btn:hover {
+      background: var(--color-primary);
+    }
+
+    /* Hero Content */
+    .hero-content {
+      text-align: center;
+      margin-bottom: 100px; /* Espacio inferior */
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+    }
+
+    /* Secciones */
+    .section {
+      padding: 50px 0;
+    }
+
+    #servicios {
+      background: gray;
+    }
+
+    .servicios-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .servicio {
+      background: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .portafolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .proyecto img {
+      width: 100%;
+      border-radius: 5px;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(120deg, var(--color-secondary), #34495e, var(--color-secondary));
+      background-size: 400% 400%;
+      color: #fff;
+      text-align: center;
+      padding: 20px 0;
+      animation: footerAnimado 6s infinite alternate;
+    }
+
+    @keyframes footerAnimado {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links {
+        margin-top: 10px;
+      }
+
+      .hero-content h1 {
+        font-size: 2rem;
+      }
+
+      .hero-content p {
+        font-size: 1rem;
+      }
+    }
+
+    /* Tarjetas de servicios */
+    .card {
+      background: rgba(8, 48, 223, 0.5);
+      position: relative;
+      max-width: 250px;
+      height: 150px;
+      border-radius: 5px;
+      padding: 1rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 7.5px;
+      transition: 0.5s ease;
+      color: white;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(
+            35.36% 35.36% at 100% 25%,
+            #0000 66%,
+            #07e22b 68% 70%,
+            #0000 72%
+          )
+          32px 32px / calc(2 * 32px) calc(2 * 32px),
+        radial-gradient(
+            35.36% 35.36% at 0 75%,
+            #0000 66%,
+            #c79013 68% 70%,
+            #0000 72%
+          )
+          32px 32px / calc(2 * 32px) calc(2 * 32px),
+        radial-gradient(
+            35.36% 35.36% at 100% 25%,
+            #0000 66%,
+            #c79013 68% 70%,
+            #0000 72%
+          )
+          0 0 / calc(2 * 32px) calc(2 * 32px),
+        radial-gradient(
+            35.36% 35.36% at 0 75%,
+            #0000 66%,
+            #c79013 68% 70%,
+            #0000 72%
+          )
+          0 0 / calc(2 * 32px) calc(2 * 32px),
+        repeating-conic-gradient(#295b3f 0 25%, #0000 0 50%) 0 0 / calc(2 * 32px)
+          calc(2 * 32px),
+        radial-gradient(#0000 66%, #c79013 68% 70%, #0000 72%) 0 calc(32px / 2) /
+          32px 32px #295b3f;
+      opacity: 0.5;
+      transition: 0.3s ease;
+    }
+
+    .card:hover::after {
+      opacity: 0.25;
+    }
+
+    .cardHeader {
+      text-transform: uppercase;
+      position: relative;
+      width: max-content;
+      font-weight: bold;
+      transition: all 0.5s ease;
+    }
+
+    .cardHeader::after {
+      content: "";
+      width: calc(100% + 1rem);
+      height: 2.5px;
+      transform: translateX(calc(-100% - 1rem));
+      background: rgb(56, 156, 156);
+      bottom: -2px;
+      left: 0;
+      position: absolute;
+      opacity: 0;
+    }
+
+    .details {
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      transform: translateY(95%);
+      transition: all 0.5s ease;
+    }
+
+    .button {
+      background-color: aqua;
+      color: black;
+      padding: 2.5px 5px;
+      width: max-content;
+      border-radius: 2.5px;
+    }
+
+    .card:hover .details {
+      transform: translateY(0%);
+      transition-delay: 0.5s;
+    }
+
+    .card:hover .cardHeader::after {
+      transform: translateX(-1rem);
+      transition: 0.5s ease;
+      opacity: 1;
+    }
+
+    .card:hover {
+      transform: scale(1.1);
+      border-radius: 15px;
+    }
   </style>
 </head>
 <body>
@@ -31,20 +342,20 @@
     <div class="navbar">
       <div class="container">
         <div class="logo-container">
-          <img src="logo.jpeg" alt="Logo de John Quintero - Servicios Digitales" class="logo">
+          <img src="logo.jpeg" alt="Logo de John Quintero" class="logo">
         </div>
         <ul class="nav-links">
-          <li><a href="#inicio" aria-label="Ir a la sección de inicio">Inicio</a></li>
-          <li><a href="#servicios" aria-label="Ir a la sección de servicios">Servicios</a></li>
-          <li><a href="#portafolio" aria-label="Ir a la sección de portafolio">Portafolio</a></li>
-          <li><a href="#contacto" aria-label="Ir a la sección de contacto">Contacto</a></li>
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#portafolio">Portafolio</a></li>
+          <li><a href="#contacto">Contacto</a></li>
         </ul>
       </div>
     </div>
     <div class="hero-content">
       <h1>Transformamos tu negocio con soluciones digitales</h1>
       <p>Digitalización, páginas web, bases de datos y marketing.</p>
-      <a href="#contacto" class="btn" aria-label="Contactar a John Quintero">Contactar</a>
+      <a href="#contacto" class="btn">Contactar</a>
     </div>
   </header>
 
@@ -60,6 +371,7 @@
               <div class="cardText">
                 Convierte tus archivos físicos en digitales de manera segura.
               </div>
+              
             </div>
           </div>
 
@@ -70,6 +382,7 @@
               <div class="cardText">
                 Diseños modernos y funcionales para tu negocio.
               </div>
+             
             </div>
           </div>
 
@@ -80,6 +393,7 @@
               <div class="cardText">
                 Organiza y gestiona tu información de manera inteligente.
               </div>
+           
             </div>
           </div>
 
@@ -90,6 +404,7 @@
               <div class="cardText">
                 Llega a más clientes con estrategias efectivas.
               </div>
+             
             </div>
           </div>
         </div>
@@ -112,23 +427,22 @@
       </div>
     </section>
 
-    <section id="contacto" class="section">
-      <div class="container">
-        <h2>Contacto</h2>
-        <div class="card">
-          <div class="details">
-            <div class="cardHeader">Escríbeme</div>
-            <div class="cardText">
-              <form action="https://formspree.io/f/xovjwawl" method="POST">
-                <label for="email">Correo:</label>
-                <input type="email" id="email" name="email" required aria-label="Ingresa tu correo electrónico">
-                <label for="message">Mensaje:</label>
-                <textarea id="message" name="Message" required aria-label="Escribe tu mensaje"></textarea>
-                <button type="submit" class="btn" aria-label="Enviar mensaje">Enviar</button>
-              </form>
-            </div>
-          </div>
-        </div>
+    <div class="card">
+      <div class="details">
+        <div class="cardHeader">contacto</div>
+        <div class="cardText">
+          escribeme 
+<form action="https://formspree.io/f/xovjwawl" method="POST">
+    <label for="email">correo:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="message">Mensaje:</label>
+    <textarea id="message" name="Message" required></textarea>
+    <button type="submit" class="btn">Enviar</button>
+  </form>
+       
+
+              </div>
+             
       </div>
     </section>
   </main>
@@ -140,11 +454,34 @@
   </footer>
 
   <!-- Botón de "Volver arriba" -->
-  <button id="back-to-top" class="btn" onclick="scrollToTop()" aria-label="Volver arriba">↑</button>
+  <button id="back-to-top" class="btn" onclick="scrollToTop()">↑</button>
 
   <!-- Scripts -->
   <script>
-    // (Scripts anteriores se mantienen igual)
+    // Botón de "Volver arriba"
+    window.onscroll = function() {
+      const button = document.getElementById('back-to-top');
+      if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        button.style.display = 'block';
+      } else {
+        button.style.display = 'none';
+      }
+    };
+
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    // Validación del formulario
+    document.querySelector('form').addEventListener('submit', function(event) {
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      if (!email || !message) {
+        alert('Por favor, completa todos los campos.');
+        event.preventDefault();
+      }
+    });
   </script>
 </body>
 </html>
