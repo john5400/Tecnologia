@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    gap: 40px;
+    gap: 4px;
 }
     
 .div1 {
@@ -58,8 +58,8 @@
             text-align: center;
         }
         img{
-            width: 100%;
-            height: 100%;
+            width: 80%;
+            height: 60%;
         }
         img {
             transition: transform 0.3s ease-in-out;
