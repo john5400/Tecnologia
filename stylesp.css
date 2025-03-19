@@ -89,10 +89,12 @@
             background-color: #cc5500; /* Naranja más oscuro */
         }
         div{
-            background-color: blueviolet;
+            background-color:gray;
         }
         @media (min-width: 768px) {
             .container {
                 flex-wrap: nowrap;
             }
-          
+          body{
+            background-color: black;
+          }
